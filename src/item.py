@@ -15,7 +15,7 @@ class Item:
         :param price: Цена за единицу товара.
         :param quantity: Количество товара в магазине.
         """
-        self.private = None
+        self.__name = name
         self.name = name
         self.price = price
         self.quantity = quantity
@@ -23,7 +23,7 @@ class Item:
         Item.all.append(self)
 
     def __repr__(self):
-        return (f"{self.private} private name\n"
+        return (f"{self.__name} private name\n"
                 f"{self.name} not private name\n"
                 f"P{self.price} price\n"
                 f"{self.quantity} quantity\n"
@@ -48,14 +48,18 @@ class Item:
         """
         Get name
         """
-        return f"{self.private}"
+        return f"{self.__name}"
 
     @name.setter
-    def name(self, name: str) -> None:
+    def name(self, prod_name):
         """
         Inout new name
         """
-        self.private = str(name).strip()[:10].capitalize()
+        if len(prod_name) > 10:
+            self.__name = prod_name[:10]
+        else:
+            self.__name = prod_name
+        #self.private = str(name).strip()[:10].capitalize()
 
     @classmethod
     def instantiate_from_csv(cls, path_file: str) -> None:
