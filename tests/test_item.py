@@ -8,9 +8,11 @@ def test_check_len_item_all_if_len_zero():
     assert len(Item.all) == 0
 
 
-def test_check_len_item_all_if_len_one(fixture_class_item):
+def test_check_len_item_all_if_len_one():
     Item.all.clear()
-    fixture_class_item
+
+    item = Item('Труба', 10000, 16)
+
     assert len(Item.all) == 1
 
 
@@ -68,7 +70,7 @@ def test_string_to_number():
     assert Item.string_to_number('2,5') == 2
 
 def test_metods_repr_and_str():
-    item = Item("Смартфон", 10000, 20)
-    assert repr(item) == "Item('Смартфон', 10000, 20)"
-    assert str(item) == 'Смартфон'
+    item1 = Item("Смартфон", 10000, 20)
+    assert repr(item1) == "Item('Смартфон', 10000, 20)"
+    assert str(item1) == 'Смартфон'
 
