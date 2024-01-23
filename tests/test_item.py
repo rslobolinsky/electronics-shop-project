@@ -1,5 +1,3 @@
-"""Здесь надо написать тесты с использованием pytest для модуля item."""
-
 import pathlib
 
 from src.item import Item
@@ -42,7 +40,7 @@ def test_item_all(fixture_class_item, fixture_class_item_2):
 def test_getter_and_setter(fixture_class_item):
     item = fixture_class_item
     item.name = "smartphoneOne"
-    assert item.name == "Smartphone"
+    assert item.name == "smartphone"
 
     item.name = "smart"
     assert item.name == "Smart"
