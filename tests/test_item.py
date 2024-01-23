@@ -13,7 +13,7 @@ def test_check_len_item_all_if_len_one():
 
     item = Item('Труба', 10000, 16)
 
-    assert len(Item.all) == 1
+    assert len(item.all) == 1
 
 
 def test_init_object_item(fixture_class_item):
@@ -69,8 +69,8 @@ def test_string_to_number():
     assert Item.string_to_number('2.5') == 2
     assert Item.string_to_number('2,5') == 2
 
+
 def test_metods_repr_and_str():
     item1 = Item("Смартфон", 10000, 20)
     assert repr(item1) == "Item('Смартфон', 10000, 20)"
     assert str(item1) == 'Смартфон'
-
