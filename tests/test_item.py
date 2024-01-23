@@ -4,10 +4,13 @@ from src.item import Item
 
 
 def test_check_len_item_all_if_len_zero():
+    Item.all.clear()
     assert len(Item.all) == 0
 
 
 def test_check_len_item_all_if_len_one(fixture_class_item):
+    Item.all.clear()
+    fixture_class_item
     assert len(Item.all) == 1
 
 
