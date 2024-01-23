@@ -68,3 +68,4 @@ def test_metods_repr_and_str():
     item = Item("Смартфон", 10000, 20)
     assert repr(item) == "Item('Смартфон', 10000, 20)"
     assert str(item) == 'Смартфон'
+
