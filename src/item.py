@@ -80,3 +80,6 @@ class Item:
         """
         clean_string = string.strip().replace(',', '.')
         return int(float(clean_string))
+
+print(repr(Item("Смартфон", 10000, 20)))
+print(str(Item("Смартфон", 10000, 20)))
