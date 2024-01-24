@@ -1,5 +1,6 @@
 import csv
 
+
 class Item:
     """
     Класс для представления товара в магазине.
@@ -19,11 +20,11 @@ class Item:
         self.name = name
         self.price = price
         self.quantity = quantity
-        #self.all.append(self)
+        # self.all.append(self)
         Item.all.append(self)
 
     def __repr__(self):
-        return f"Item('{self.__name}', '{self.price}', '{self.quantity}'"
+        return f"Item('{self.__name}', {self.price}, {self.quantity})"
 
     def __str__(self):
         return f'{self.__name}'
@@ -58,7 +59,7 @@ class Item:
             self.__name = prod_name[:10]
         else:
             self.__name = prod_name
-        #self.private = str(name).strip()[:10].capitalize()
+        # self.private = str(name).strip()[:10].capitalize()
 
     @classmethod
     def instantiate_from_csv(cls, path_file: str) -> None:
@@ -80,6 +81,7 @@ class Item:
         """
         clean_string = string.strip().replace(',', '.')
         return int(float(clean_string))
+
 
 print(repr(Item("Смартфон", 10000, 20)))
 print(str(Item("Смартфон", 10000, 20)))
