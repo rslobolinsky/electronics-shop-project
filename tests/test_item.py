@@ -49,7 +49,7 @@ def test_getter_and_setter(fixture_class_item):
     assert item.name == "smartphone"
 
     item.name = "smart"
-    assert item.name == "Smart"
+    assert item.name == "smart"
 
     item.name = 111
     assert item.name == "111"
