@@ -1,9 +1,8 @@
-class Phone:
+from src.item import Item
+
+class Phone(Item):
     def __init__(self, name: str, price: float, quantity: int, number_of_sim: int):
         super().__init__(name, price, quantity)
-        self.quantity = None
-        self.price = None
-        self.name = None
         self._number_of_sim = number_of_sim
 
     def __repr__(self):
