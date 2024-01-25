@@ -1,8 +1,9 @@
-from src.item import Item
-
 class Phone:
     def __init__(self, name: str, price: float, quantity: int, number_of_sim: int):
         super().__init__(name, price, quantity)
+        self.quantity = None
+        self.price = None
+        self.name = None
         self._number_of_sim = number_of_sim
 
     def __repr__(self):
@@ -13,7 +14,8 @@ class Phone:
         return self._number_of_sim
 
     @number_of_sim.setter
-    def number_of_sim(self, count):
+    def number_of_sim(self, count: int):
         if isinstance(count, int) and count > 0:
             self._number_of_sim = count
-        raise Exception
+        else:
+            raise Exception
