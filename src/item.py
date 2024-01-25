@@ -61,7 +61,7 @@ class Item:
         Inout new name
         """
         if len(prod_name) > 10:
-            self.__name = prod_name[:10]
+            self.__name = prod_name.strip()[:10]
         else:
             self.__name = prod_name
         # self.private = str(name).strip()[:10].capitalize()
