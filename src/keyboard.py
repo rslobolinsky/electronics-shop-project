@@ -6,11 +6,11 @@ class Mixin:
     def __init__(self):
         self.language = None
 
-    def install_lan(self):
+    def install_lang(self):
         self._language = 'EN'
 
     def change_lang(self):
-        if self._lenguage == 'EN':
+        if self._language == 'EN':
             self._language == 'RU'
         elif self._language == 'RU':
                 self._language == 'EN'
