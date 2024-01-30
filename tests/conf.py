@@ -11,3 +11,11 @@ def fixture_class_item():
 @pytest.fixture
 def fixture_class_item_2():
     return Item("No Смартфон", 100, 666)
+
+item.name = "111"
+assert item.name == "111"
+
+assert phone + item == 25
+
+with pytest.raises(ValueError):
+    phone + 5
