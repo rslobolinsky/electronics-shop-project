@@ -26,6 +26,7 @@ def test_lang_in_kb(fixture_class):
     fixture_class.change_lang()
     assert fixture_class.language == 'EN'
 
+
 def __add__(self, other):
     if isinstance(other, Item):
         return self.quantity + other.quantity
