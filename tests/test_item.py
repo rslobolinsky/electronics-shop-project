@@ -1,5 +1,7 @@
 import pathlib
 
+import pytest
+
 from src.item import Item
 from src.phone import Phone
 
@@ -88,5 +90,6 @@ def test_add_class():
     phone = Phone("iPhone 14", 120_000, 5, 2)
     item = Item("Смартфон", 10000, 20)
 
-    assert phone + item == 10
-    assert phone + 5 != 10
+    assert phone + item == 25
+    with pytest.raises(ValueError):
+        phone + 5

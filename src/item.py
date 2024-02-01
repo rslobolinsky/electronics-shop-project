@@ -32,7 +32,7 @@ class Item:
     def __add__(self, other):
         if isinstance(other, Item):
             return self.quantity + other.quantity
-        raise Exception
+        raise ValueError
 
     def calculate_total_price(self) -> float:
         """
