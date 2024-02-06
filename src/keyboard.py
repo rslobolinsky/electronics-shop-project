@@ -10,14 +10,14 @@ class Mixin:
 
     def change_lang(self) -> None:
         if self._language == 'EN':
-            self._language == 'RU'
+            self._language = 'RU'
         else:
-            self._language == 'EN'
+            self._language = 'EN'
 
 
 class Keyboard(Item, Mixin):
 
-    def __init__(self, name: str, price: float, quantity: int) -> object:
+    def __init__(self, name: str, price: float, quantity: int) -> None:
         super().__init__(name, price, quantity)
 
     def __repr__(self):
