@@ -1,7 +1,9 @@
+import csv
+
 
 class InstantiateCSVError(Exception):
-    def __init__(self):
-        pass
+    def __init__(self, *args, **kwargs):
+        self.massage = 'Файл поврежден'
 
     def __str__(self):
-        return "Файл item.csv поврежден"
+        return self.massage

@@ -1,4 +1,7 @@
 import csv
+import os
+
+from src.InstantiateCSVError import InstantiateCSVError
 
 
 class Item:
@@ -71,13 +74,23 @@ class Item:
         """
         Get csv file and create 5 classes
         """
-        cls.all.clear()
+
+        if not os.path.exists(path_file):
+            raise FileNotFoundError("Отсутсвует файл item.csv")
+        else:
+            cls.all.clear()
 
         with open(path_file, 'r', encoding='windows-1251') as csv_file:
             file = csv.DictReader(csv_file)
+            lst = list(file)
+            if all([all(i.values for i in lst) for i in lst]):
+                for dct in lst:
+                    cls(*dct.values())
+            else:
+                raise InstantiateCSVError()
 
-            for row in file:
-                cls(row['name'], float(row['price']), float(row['quantity']))
+            # for row in file:
+            #     cls(row['name'], float(row['price']), float(row['quantity']))
 
     @staticmethod
     def string_to_number(string: str) -> int:
